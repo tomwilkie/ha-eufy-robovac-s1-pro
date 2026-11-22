@@ -123,6 +123,12 @@ Pull requests are welcome!
 
 ## Changelog
 
+### v1.0.6-tw.1
+Fork release on top of v1.0.6.
+- **Add: Optional manual IP address** — An options flow lets you set the vacuum's IP address, used when UDP discovery can't find it (e.g. the vacuum is on a separate subnet or VLAN). Upstream PR [#29](https://github.com/tkoba1974/ha-eufy-robovac-s1-pro/pull/29).
+- **Add: Brand icon and logo** — Ships the eufy brand images in `brand/`, shown on Home Assistant 2026.3+. Upstream PR [#30](https://github.com/tkoba1974/ha-eufy-robovac-s1-pro/pull/30).
+- **Change: Integration renamed to "Eufy"** — Matches the brand-only naming of other integration tiles.
+
 ### v1.0.6
 - **Fix: Integration fails to load on Home Assistant 2026.9+** — HA 2026.9 removed battery support from vacuum entities (`VacuumEntityFeature.BATTERY`), so `vacuum.py` raised `AttributeError` at import time and the whole config entry failed to set up. The flag is removed ([#23](https://github.com/tkoba1974/ha-eufy-robovac-s1-pro/pull/23), thanks @ajachierno; closes [#19](https://github.com/tkoba1974/ha-eufy-robovac-s1-pro/issues/19)).
 - **Change: Battery sensor is now the primary battery display** — The vacuum card no longer shows battery on HA 2026.9+. The **Battery** sensor moves from *Diagnostic* to the regular *Sensors* section, and the value is still mirrored as the vacuum entity's `battery_level` attribute for templates and custom cards.
